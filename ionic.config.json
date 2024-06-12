@@ -1,0 +1,7 @@
+{
+  "name": "LogroBSextoNivel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
