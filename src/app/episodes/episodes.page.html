@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/principal'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Episodios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="episodes.length > 0">
+    <ion-item *ngFor="let episode of episodes">
+      <ion-thumbnail slot="start" *ngIf="episode.image">
+        <img [src]="episode.image.medium">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ episode.name }}</h2>
+        <p><strong>Temporada:</strong> {{ episode.season }}</p>
+        <p><strong>Episodio:</strong> {{ episode.number }}</p>
+        <p><strong>Fecha de emisión:</strong> {{ episode.airdate }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

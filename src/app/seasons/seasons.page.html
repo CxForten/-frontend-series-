@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Temporadas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/principal'></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="seasons.length > 0">
+    <ion-item *ngFor="let season of seasons" (click)="onSelectSeason(season.id)">
+      <ion-thumbnail slot="start" *ngIf="season.image">
+        <img [src]="season.image.medium">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Temporada {{ season.number }}</h2>
+        <p><strong>Episodios:</strong> {{ season.episodeOrder }}</p>
+        <p><strong>Estreno:</strong> {{ season.premiereDate }}</p>
+        <p><strong>Fin:</strong> {{ season.endDate }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
